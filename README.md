@@ -11,7 +11,7 @@ The analysis of the RNA data is done with the `metacells` python package, wherea
 - [mcATAC R package](https://github.com/tanaylab/mcATAC) 
 
 ### Usage
-1. to initiate, you will need to download a .zip file (`mtecs_multiome_data.tar.gz`) that contains all the required raw data, cached objects and specifications.
+1. to initiate, you will need to download a .tar.gz file (`mtecs_multiome_data.tar.gz`) that contains all the required raw data, cached objects and specifications.
 
    to do that, please run the following bash command from a designated working directory created for the project:
    ``` bash
