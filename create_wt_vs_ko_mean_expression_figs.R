@@ -19,7 +19,7 @@ message(sprintf("module_color: %s",mod_col))
 
 message(sprintf("file exists: %s", file.exists(file_nm)))
 
-mod = gsub(file_nm,pattern = '_mean_exp_Feb23.csv',replacement = '')
+mod = gsub(file_nm,pattern = '_mean_exp.csv',replacement = '')
 
 # setwd(wd)
 egc_mean_exp = read.csv(file_nm,header = T,row.names = 1)
@@ -44,5 +44,5 @@ g<-ggplot(egc_mean_exp,aes(log_fc,WT))+
   guides(size='none')+
         labs(y=sprintf('log2 Mean Expression in WT %s cells',gsub('_mod','',mod)),x='log2 FC (KO/WT)')
 
-ggsave(g,filename = sprintf('%s_Feb23.png',mod),width = 16,height = 8)
+ggsave(g,filename = sprintf('%s.png',mod),width = 16,height = 8)
 message("saved figure")
