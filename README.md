@@ -5,12 +5,12 @@ This repository bundles the necessities for reproducing the figures and processe
 
    to do that, please run the following bash command from a designated working directory created for the project:
    ``` bash
-   wget /path/to/file_tar.gz
+   wget https://mtec-multiome.s3.eu-west-1.amazonaws.com/mtecs_multiome_data.tar.gz
    ```
    
    and then run:
    ``` bash
-   tar xvzf file.tar.gz
+   tar xvzf mtecs_multiome_data.tar.gz
    ```
 
-3. analysis pipeline and workflow is divided to 2 sections - RNA and ATAC - where the RNA sections is meant to be executed first.
+2. analysis pipeline and workflow is divided into 2 sections - RNA and ATAC - where the RNA section is meant to be executed first.
