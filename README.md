@@ -9,7 +9,8 @@ The analysis of the RNA data is done with the `metacells` python package, wherea
 - mTECs paper: Bornstein, C., Nevo, S., Giladi, A. et al. 2018 [Nature](https://doi.org/10.1038/s41586-018-0346-1)
 
 - [mcATAC R package](https://github.com/tanaylab/mcATAC) 
- 
+
+### Usage
 1. to initiate, you will need to download a .zip file (`mtecs_multiome_data.tar.gz`) that contains all the required raw data, cached objects and specifications.
 
    to do that, please run the following bash command from a designated working directory created for the project:
