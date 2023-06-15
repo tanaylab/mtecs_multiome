@@ -20,7 +20,6 @@ RUN R -e 'install.packages("ggrepel")'
 RUN R -e 'BiocManager::install("tanaylab/metacell")'
 RUN R -e 'BiocManager::install("tanaylab/prego")'
 
-
 RUN git clone https://github.com/tanaylab/mtecs_multiome.git
 
 WORKDIR /mtecs_multiome
