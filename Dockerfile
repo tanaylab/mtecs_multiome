@@ -1,8 +1,10 @@
 FROM bioconductor/bioconductor_docker:RELEASE_3_12
 
 # Install rpm dependencies
-RUN apt-get update && apt-get install -y  git-core libcurl4-openssl-dev libgit2-dev libicu-dev libssl-dev libxml2-dev make pandoc pandoc-citeproc zlib1g-dev libgtk2.0-dev libcairo2-dev libxt-dev xvfb xauth xfonts-base vim && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git-core libcurl4-openssl-dev libgit2-dev libicu-dev libssl-dev libxml2-dev make pandoc pandoc-citeproc zlib1g-dev libgtk2.0-dev libcairo2-dev libxt-dev xvfb xauth xfonts-base vim python3 && rm -rf /var/lib/apt/lists/*
 
+RUN pip install metacells
+RUN pip install anndata
 
 RUN R -e 'remotes::install_github(repo="tanaylab/mcATAC",ref="6eb816a108c99cfee4af12a0326b2b59f00b9c1a")'
 RUN R -e 'remotes::install_github("tanaylab/tgconfig")'
