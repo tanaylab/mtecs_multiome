@@ -24,3 +24,22 @@ The analysis of the RNA data is done with the `metacells` python package, wherea
    ```
 
 2. analysis pipeline and workflow is divided into 2 sections - RNA and ATAC - where the RNA section is meant to be executed first.
+
+### Docker 
+
+1. Pull the docker image
+
+```bash
+docker pull tanaylab/mtecs_multiome:latest
+```
+
+2. Download the data (see above).
+
+3. Run the docker container:
+
+```bash
+docker run -v $(pwd):/mtecs_multiome -p 8888:8888 tanaylab/mtecs_multiome:latest
+```
+
+Connect to the jupyter server running at port 8888.
+
