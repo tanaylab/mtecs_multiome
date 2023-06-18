@@ -5,9 +5,6 @@ library(tidyselect)
 
 args <- commandArgs(trailingOnly = T)
 
-## wd --> args[1]
-## fn --> args[2]
-
 file_nm = strsplit(args[1],split = ',')%>%unlist()%>%.[1]
 mod_col = strsplit(args[1],split = ',')%>%unlist()%>%.[2]
 
@@ -20,6 +17,10 @@ message(sprintf("module_color: %s",mod_col))
 message(sprintf("file exists: %s", file.exists(file_nm)))
 
 mod = gsub(file_nm,pattern = '_mean_exp.csv',replacement = '')
+
+fig_dir_nm = "./figs/Fig2_mean_exp/"
+if(!dir.exists(fig_dir_nm)){
+        dir.create(fig_dir_nm,recursive=TRUE)}
 
 # setwd(wd)
 egc_mean_exp = read.csv(file_nm,header = T,row.names = 1)
@@ -44,5 +45,5 @@ g<-ggplot(egc_mean_exp,aes(log_fc,WT))+
   guides(size='none')+
         labs(y=sprintf('log2 Mean Expression in WT %s cells',gsub('_mod','',mod)),x='log2 FC (KO/WT)')
 
-ggsave(g,filename = sprintf('%s.png',mod),width = 16,height = 8)
+ggsave(g,filename = sprintf('%s/%s.png',fig_dir_nm,mod),width = 16,height = 8)
 message("saved figure")
