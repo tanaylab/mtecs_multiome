@@ -6,26 +6,28 @@ USER root
 RUN apt-get update && apt-get install -y git-core libcurl4-openssl-dev libgit2-dev libicu-dev libssl-dev libxml2-dev make pandoc pandoc-citeproc zlib1g-dev libgtk2.0-dev libhiredis-dev libcairo2-dev libxt-dev xvfb xauth xfonts-base vim && rm -rf /var/lib/apt/lists/*
 USER ${NB_UID}
 
+ENV GITHUB_PAT=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
+
 # Install BiocManager and reticulate
 RUN R -e 'install.packages("BiocManager", repos = "http://cran.us.r-project.org")'
 RUN R -e 'install.packages("reticulate", repos = "http://cran.us.r-project.org")'
 
 RUN pip3 install metacells
 RUN pip3 install anndata
+RUN pip3 install adjustText
 
 RUN R -e 'remotes::install_github(repo="tanaylab/mcATAC",ref="6eb816a108c99cfee4af12a0326b2b59f00b9c1a")'
 RUN R -e 'remotes::install_github("tanaylab/tgconfig")'
 RUN R -e 'remotes::install_github("tanaylab/tglkmeans")'
-RUN R -e 'install.packages("tidyverse")'
-RUN R -e 'install.packages("dplyr")'
-RUN R -e 'install.packages("pheatmap")'
-RUN R -e 'install.packages("gridExtra")'
-RUN R -e 'install.packages("umap")'
-RUN R -e 'install.packages("Matrix")'
-RUN R -e 'install.packages("MatrixGenerics")'
-RUN R -e 'install.packages("reshape2")'
-RUN R -e 'install.packages("ggplot2")'
-RUN R -e 'install.packages("ggrepel")'
+RUN R -e 'install.packages("tidyverse",repos = "http://cran.us.r-project.org")'
+RUN R -e 'install.packages("dplyr",repos = "http://cran.us.r-project.org")'
+RUN R -e 'install.packages("pheatmap",repos = "http://cran.us.r-project.org")'
+RUN R -e 'install.packages("gridExtra",repos = "http://cran.us.r-project.org")'
+RUN R -e 'install.packages("Matrix",repos = "http://cran.us.r-project.org")'
+RUN R -e 'install.packages("MatrixGenerics",repos = "http://cran.us.r-project.org")'
+RUN R -e 'install.packages("reshape2",repos = "http://cran.us.r-project.org")'
+RUN R -e 'install.packages("ggplot2",repos = "http://cran.us.r-project.org")'
+RUN R -e 'install.packages("ggrepel",repos = "http://cran.us.r-project.org")'
 RUN R -e 'BiocManager::install("tanaylab/metacell")'
 RUN R -e 'BiocManager::install("tanaylab/prego")'
 
