@@ -6,8 +6,6 @@ USER root
 RUN apt-get update && apt-get install -y git-core libcurl4-openssl-dev libgit2-dev libicu-dev libssl-dev libxml2-dev make pandoc pandoc-citeproc zlib1g-dev libgtk2.0-dev libhiredis-dev libcairo2-dev libxt-dev xvfb xauth xfonts-base vim && rm -rf /var/lib/apt/lists/*
 USER ${NB_UID}
 
-ENV GITHUB_PAT=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
-
 # Install BiocManager and reticulate
 RUN R -e 'install.packages("BiocManager", repos = "http://cran.us.r-project.org")'
 RUN R -e 'install.packages("reticulate", repos = "http://cran.us.r-project.org")'
