@@ -28,6 +28,18 @@ Since the RNA notebook is the first to run, a command for downloading the data a
 
 once you finish running through the RNA notebook, simply switch to the ATAC notebook.
 
+Required modules (python):
+* metacells
+* Anndata
+* Scanpy
+* standard modules (numpy, pandas, scipy, matplotlib, seaborn) 
+
+Required packages (R):
+* metacell
+* mcATAC
+* chameleon
+* reshape2
+* visualization packages (ggplot2, pheatmap
 
 ### Downloading the data
 the processed data, as well as the objects generated through the analysis pipeline and other dependencies (e.g. genomic tracks) are all available to download as a .tar.gz file (`mtecs_multiome_data.tar.gz`). 
