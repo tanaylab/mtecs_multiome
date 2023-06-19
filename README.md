@@ -35,11 +35,12 @@ Required modules (python):
 * standard modules (numpy, pandas, scipy, matplotlib, seaborn) 
 
 Required packages (R):
-* metacell
-* mcATAC
-* chameleon
-* reshape2
-* visualization packages (ggplot2, pheatmap
+* `metacell`
+* `mcATAC`
+* `prego`
+* `chameleon`
+* `reshape2`
+* visualization packages (`ggplot2`, `pheatmap`)
 
 ### Downloading the data
 the processed data, as well as the objects generated through the analysis pipeline and other dependencies (e.g. genomic tracks) are all available to download as a .tar.gz file (`mtecs_multiome_data.tar.gz`). 
