@@ -28,7 +28,7 @@ Since the RNA notebook is the first to run, a command for downloading the data a
 
 once you finish running through the RNA notebook, simply switch to the ATAC notebook.
 
-Required modules (python):
+Required modules (python >=3.7):
 * `metacells`
 * `Anndata`
 * `Scanpy`
@@ -39,7 +39,6 @@ Required packages (R):
 * `mcATAC`
 * `prego`
 * `chameleon`
-* `reshape2`
 * visualization packages (`ggplot2`, `pheatmap`)
 
 ### Downloading the data
